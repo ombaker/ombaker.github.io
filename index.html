@@ -24,7 +24,8 @@
 </nav>
 
 <div ng-controller = "homeCtrl">
-
+ <p><input type='text' ng-model='search_text' > Enter Search text</p>
+ 
           <table class="table table-bordered table-striped">
           	<tr>
              	<th>sid</th>
@@ -34,6 +35,7 @@
 				<th>GPA Points</th>
 				<th>Major</th>
           	</tr>
+		<tr ng-repeat = "student in students | filter:search_text ">
           	<tr> <td>1121</td><td>Solertan</td><td>Rita</td><td>23</td><td>48</td><td>CIT</td></tr>
             <tr> <td>1398</td><td>Alexander</td><td>Rivka</td><td>41</td><td>103</td><td>EET</td></tr>
 			<tr> <td>1498</td><td>Ramos</td><td>Ned</td><td>28</td><td>100</td><td>BUS</td></tr>
@@ -62,7 +64,8 @@
 			<tr> <td>5462</td><td>Fernandez</td><td>Moses</td><td>32</td><td>99</td><td>WEB</td></tr>
 			<tr> <td>6084</td><td>Morris</td><td>Albert</td><td>21</td><td>67</td><td>CIT</td></tr>
 			<tr> <td>6241</td><td>Lee</td><td>Aaron</td><td>32</td><td>100</td><td>EET</td></tr>
-     	</table>
+     	</tr>
+		</table>
         
         
 </div>   <!-- end homeCtrl -->
